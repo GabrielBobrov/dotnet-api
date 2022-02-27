@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "BAvNsO4jNfUuVotTTvj0DHLXKydtoJleBWuL6gdseo419LaZSVECU96f+kSTg0yNtkh73bkj2g4zd1JAfGVg2Q==",
+  "success": true,
+  "projectFilePath": "/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/2-Manager.Domain/Manager.Domain.csproj",
+  "expectedPackageFiles": [
+    "/Users/gabrielgomesbobrovlopes/.nuget/packages/fluentvalidation/10.3.6/fluentvalidation.10.3.6.nupkg.sha512"
+  ],
+  "logs": []
+}

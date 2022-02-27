@@ -1,0 +1,200 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/4-Manager.Infra/Manager.Infra.csproj": {}
+  },
+  "projects": {
+    "/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/2-Manager.Domain/Manager.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/2-Manager.Domain/Manager.Domain.csproj",
+        "projectName": "Manager.Domain",
+        "projectPath": "/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/2-Manager.Domain/Manager.Domain.csproj",
+        "packagesPath": "/Users/gabrielgomesbobrovlopes/.nuget/packages/",
+        "outputPath": "/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/2-Manager.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/gabrielgomesbobrovlopes/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/5-Manager.Core/Manager.Core.csproj": {
+                "projectPath": "/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/5-Manager.Core/Manager.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "fluentvalidation": {
+              "target": "Package",
+              "version": "[10.3.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/4-Manager.Infra/Manager.Infra.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/4-Manager.Infra/Manager.Infra.csproj",
+        "projectName": "Manager.Infra",
+        "projectPath": "/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/4-Manager.Infra/Manager.Infra.csproj",
+        "packagesPath": "/Users/gabrielgomesbobrovlopes/.nuget/packages/",
+        "outputPath": "/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/4-Manager.Infra/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/gabrielgomesbobrovlopes/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/2-Manager.Domain/Manager.Domain.csproj": {
+                "projectPath": "/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/2-Manager.Domain/Manager.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityframeworkCore": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
+            "Microsoft.EntityframeworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
+            "Microsoft.EntityframeworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/5-Manager.Core/Manager.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/5-Manager.Core/Manager.Core.csproj",
+        "projectName": "Manager.Core",
+        "projectPath": "/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/5-Manager.Core/Manager.Core.csproj",
+        "packagesPath": "/Users/gabrielgomesbobrovlopes/.nuget/packages/",
+        "outputPath": "/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/5-Manager.Core/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/gabrielgomesbobrovlopes/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

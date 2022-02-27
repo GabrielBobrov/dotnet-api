@@ -1,0 +1,12 @@
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/5-Manager.Core/obj/Debug/net6.0/Manager.Core.csproj.AssemblyReference.cache
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/5-Manager.Core/obj/Debug/net6.0/Manager.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/5-Manager.Core/obj/Debug/net6.0/Manager.Core.AssemblyInfoInputs.cache
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/5-Manager.Core/obj/Debug/net6.0/Manager.Core.AssemblyInfo.cs
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/5-Manager.Core/obj/Debug/net6.0/Manager.Core.csproj.CoreCompileInputs.cache
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/5-Manager.Core/bin/Debug/net6.0/Manager.Core.deps.json
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/5-Manager.Core/bin/Debug/net6.0/Manager.Core.dll
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/5-Manager.Core/bin/Debug/net6.0/ref/Manager.Core.dll
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/5-Manager.Core/bin/Debug/net6.0/Manager.Core.pdb
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/5-Manager.Core/obj/Debug/net6.0/Manager.Core.dll
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/5-Manager.Core/obj/Debug/net6.0/ref/Manager.Core.dll
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/5-Manager.Core/obj/Debug/net6.0/Manager.Core.pdb
