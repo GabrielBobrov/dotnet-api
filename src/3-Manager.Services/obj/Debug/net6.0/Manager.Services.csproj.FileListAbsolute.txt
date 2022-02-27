@@ -10,3 +10,10 @@
 /Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/3-Manager.Services/obj/Debug/net6.0/Manager.Services.dll
 /Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/3-Manager.Services/obj/Debug/net6.0/ref/Manager.Services.dll
 /Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/3-Manager.Services/obj/Debug/net6.0/Manager.Services.pdb
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/3-Manager.Services/bin/Debug/net6.0/Manager.Core.dll
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/3-Manager.Services/bin/Debug/net6.0/Manager.Domain.dll
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/3-Manager.Services/bin/Debug/net6.0/Manager.Infra.dll
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/3-Manager.Services/bin/Debug/net6.0/Manager.Core.pdb
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/3-Manager.Services/bin/Debug/net6.0/Manager.Domain.pdb
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/3-Manager.Services/bin/Debug/net6.0/Manager.Infra.pdb
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/3-Manager.Services/obj/Debug/net6.0/Manager.Services.csproj.CopyComplete

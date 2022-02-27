@@ -1,0 +1,35 @@
+﻿<Properties StartupConfiguration="{1F2ECC59-D358-44A8-9DAB-0A93B9F5FF61}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/2-Manager.Domain/Entities/User.cs">
+    <Files>
+      <File FileName="src/4-Manager.Infra/Context/ManageContext.cs" Line="18" Column="9" />
+      <File FileName="src/2-Manager.Domain/Entities/User.cs" Line="12" Column="53" />
+      <File FileName="src/4-Manager.Infra/Repositories/UserRepository.cs" Line="20" Column="57" />
+      <File FileName="src/4-Manager.Infra/Migrations/20220227040145_InitialMigration.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="APItest" expanded="True">
+            <Node name="src" expanded="True">
+              <Node name="Manager.Domain" expanded="True">
+                <Node name="Entities" expanded="True">
+                  <Node name="User.cs" selected="True" />
+                </Node>
+              </Node>
+              <Node name="Manager.Infra" expanded="True">
+                <Node name="Context" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.src.Manager.API PreferredExecutionTarget="/Applications/Brave Browser.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
