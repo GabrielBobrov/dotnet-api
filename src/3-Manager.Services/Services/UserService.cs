@@ -4,6 +4,9 @@ using Manager.Domain.Entities;
 using Manager.Infra.Interface;
 using Manager.Services.DTO;
 using Manager.Services.Interfaces;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
 
 namespace Manager.Services.Services
 {
@@ -62,7 +65,14 @@ namespace Manager.Services.Services
 
             return _mapper.Map<UserDto>(user);
         }
-        public async Task<List<UserDto>> Get()
+
+        public async Task<UserDto> Get(long id)
+        {
+            var user = await _userRepository.Get(id);
+
+            return _mapper.Map<UserDto>(user);
+        }
+        public async Task<List<UserDto>> GetAll()
         {
             var allUsers = await _userRepository.Get();
 

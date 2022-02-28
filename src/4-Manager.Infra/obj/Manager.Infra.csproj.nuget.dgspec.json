@@ -106,19 +106,19 @@
           "dependencies": {
             "Microsoft.EntityframeworkCore": {
               "target": "Package",
-              "version": "[6.0.2, )"
+              "version": "[6.0.1, )"
             },
             "Microsoft.EntityframeworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.2, )"
+              "version": "[6.0.1, )"
             },
             "Microsoft.EntityframeworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.2, )"
+              "version": "[6.0.1, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
