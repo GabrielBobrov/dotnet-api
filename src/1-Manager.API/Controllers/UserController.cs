@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace Manager.API.Controllers
 {
     [ApiController]
-    [Route("/api/v1/user")]
+    [Route("/api/v1/users")]
     public class UserController : ControllerBase
     {
         public readonly IMapper _mapper;
@@ -68,7 +68,7 @@ namespace Manager.API.Controllers
 
         [HttpDelete]
         [Authorize]
-        [Route("/api/v1/users/remove/{id}")]
+        [Route("{id}")]
         public async Task<IActionResult> RemoveAsync(long id)
         {
             await _userService.Remove(id);
@@ -83,7 +83,7 @@ namespace Manager.API.Controllers
 
         [HttpGet]
         [Authorize]
-        [Route("/api/v1/users/{id}")]
+        [Route("{id}")]
         public async Task<IActionResult> GetAsync(long id)
         {
             var user = await _userService.Get(id);
@@ -109,7 +109,7 @@ namespace Manager.API.Controllers
 
         [HttpGet]
         [Authorize]
-        [Route("/api/v1/users/get-all")]
+        [Route("get-all")]
         public async Task<IActionResult> GetAsync()
         {
             var allUsers = await _userService.GetAll();
@@ -126,7 +126,7 @@ namespace Manager.API.Controllers
 
         [HttpGet]
         [Authorize]
-        [Route("/api/v1/users/get-by-email")]
+        [Route("get-by-email")]
         public async Task<IActionResult> GetByEmailAsync([FromQuery] string email)
         {
             var user = await _userService.GetByEmail(email);
@@ -153,7 +153,7 @@ namespace Manager.API.Controllers
 
         [HttpGet]
         [Authorize]
-        [Route("/api/v1/users/search-by-name")]
+        [Route("search-by-name")]
         public async Task<IActionResult> SearchByNameAsync([FromQuery] string name)
         {
             var allUsers = await _userService.SearchByName(name);
@@ -179,7 +179,7 @@ namespace Manager.API.Controllers
 
         [HttpGet]
         [Authorize]
-        [Route("/api/v1/users/search-by-email")]
+        [Route("search-by-email")]
         public async Task<IActionResult> SearchByEmailAsync([FromQuery] string email)
         {
             var allUsers = await _userService.SearchByEmail(email);

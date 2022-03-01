@@ -49,3 +49,9 @@
 /Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/1-Manager.API/obj/Debug/net6.0/ref/Manager.API.dll
 /Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/1-Manager.API/obj/Debug/net6.0/Manager.API.pdb
 /Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/1-Manager.API/obj/Debug/net6.0/Manager.API.genruntimeconfig.cache
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/1-Manager.API/bin/Debug/net6.0/BCrypt.Net-Next.dll
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/1-Manager.API/bin/Debug/net6.0/EscNet.dll
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/1-Manager.API/bin/Debug/net6.0/Isopoh.Cryptography.Argon2.dll
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/1-Manager.API/bin/Debug/net6.0/Isopoh.Cryptography.Blake2b.dll
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/1-Manager.API/bin/Debug/net6.0/Isopoh.Cryptography.SecureArray.dll
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/1-Manager.API/bin/Debug/net6.0/Scrypt.dll
