@@ -31,7 +31,7 @@ namespace Manager.API.Controllers
             {
                 var userDto = _mapper.Map<UserDto>(viewModel);
 
-                var userCreadted = await _userService.Create(userDto);
+                var userCreadted = await _userService.CreateAsync(userDto);
 
                 return Ok(new ResultViewModel{
                     Message = "Usuario criado com sucesso",
@@ -56,7 +56,7 @@ namespace Manager.API.Controllers
         public async Task<IActionResult> UpdateAsync([FromBody] UpdateUserViewModel userViewModel)
         {
             var userDto = _mapper.Map<UserDto>(userViewModel);
-            var userUpdated = await _userService.Update(userDto);
+            var userUpdated = await _userService.UpdateAsync(userDto);
 
             return Ok(new ResultViewModel
             {
@@ -71,7 +71,7 @@ namespace Manager.API.Controllers
         [Route("{id}")]
         public async Task<IActionResult> RemoveAsync(long id)
         {
-            await _userService.Remove(id);
+            await _userService.RemoveAsync(id);
 
             return Ok(new ResultViewModel
             {
@@ -86,7 +86,7 @@ namespace Manager.API.Controllers
         [Route("{id}")]
         public async Task<IActionResult> GetAsync(long id)
         {
-            var user = await _userService.Get(id);
+            var user = await _userService.GetAsync(id);
 
             if (user == null)
             {
@@ -112,7 +112,7 @@ namespace Manager.API.Controllers
         [Route("get-all")]
         public async Task<IActionResult> GetAsync()
         {
-            var allUsers = await _userService.GetAll();
+            var allUsers = await _userService.GetAllAsync();
 
 
             return Ok(new ResultViewModel
@@ -129,7 +129,7 @@ namespace Manager.API.Controllers
         [Route("get-by-email")]
         public async Task<IActionResult> GetByEmailAsync([FromQuery] string email)
         {
-            var user = await _userService.GetByEmail(email);
+            var user = await _userService.GetByEmailAsync(email);
 
             
 
@@ -156,7 +156,7 @@ namespace Manager.API.Controllers
         [Route("search-by-name")]
         public async Task<IActionResult> SearchByNameAsync([FromQuery] string name)
         {
-            var allUsers = await _userService.SearchByName(name);
+            var allUsers = await _userService.SearchByNameAsync(name);
 
             if (allUsers == null)
             {
@@ -182,7 +182,7 @@ namespace Manager.API.Controllers
         [Route("search-by-email")]
         public async Task<IActionResult> SearchByEmailAsync([FromQuery] string email)
         {
-            var allUsers = await _userService.SearchByEmail(email);
+            var allUsers = await _userService.SearchByEmailAsync(email);
 
             if (allUsers == null)
             {

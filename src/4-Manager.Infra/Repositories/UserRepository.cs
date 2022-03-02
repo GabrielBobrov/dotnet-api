@@ -17,7 +17,7 @@ namespace Manager.Infra.Repositories
             _context = context;
         }
 
-        public async Task<User> GetByEmail(string email)
+        public async Task<User> GetByEmailAsync(string email)
         {
             var user = await _context.Users
                                      .Where
@@ -29,7 +29,7 @@ namespace Manager.Infra.Repositories
             return user.FirstOrDefault();
         }
 
-        public async Task<List<User>> SearchByEmail(string email)
+        public async Task<List<User>> SearchByEmailAsync(string email)
         {
             var users = await _context.Users
                                      .Where
@@ -41,7 +41,7 @@ namespace Manager.Infra.Repositories
             return users;
         }
 
-        public async Task<List<User>> SearchByName(string name)
+        public async Task<List<User>> SearchByNameAsync(string name)
         {
             var users = await _context.Users
                                      .Where

@@ -6,7 +6,8 @@ using Manager.Domain.Entities;
 using Manager.Infra.Interface;
 using Manager.Infra.Context;
 
-namespace Manager.Infra.Repository{
+namespace Manager.Infra.Repository
+{
     public class BaseRepository<T> : IBaseRepository<T> where T : Base
     {
         private readonly ManagerContext _context;
@@ -16,7 +17,7 @@ namespace Manager.Infra.Repository{
             _context = context;
         }
 
-        public virtual async Task<T> Create (T obj)
+        public virtual async Task<T> CreateAsync (T obj)
         {
             _context.Add(obj);
             await _context.SaveChangesAsync();
@@ -24,7 +25,7 @@ namespace Manager.Infra.Repository{
             return obj;
         }
 
-        public virtual async Task<T> Update (T obj)
+        public virtual async Task<T> UpdateAsync (T obj)
         {
             _context.Entry(obj).State = EntityState.Modified;
             await _context.SaveChangesAsync();
@@ -32,9 +33,9 @@ namespace Manager.Infra.Repository{
             return obj;
         }
 
-        public virtual async Task<T> Remove (long id)
+        public virtual async Task<T> RemoveAsync (long id)
         {
-            var obj = await Get(id);
+            var obj = await GetAsync(id);
 
             if(obj != null)
             {
@@ -45,7 +46,7 @@ namespace Manager.Infra.Repository{
             return obj;
         }
 
-        public virtual async Task<T> Get (long id)
+        public virtual async Task<T> GetAsync (long id)
         {
             var obj = await _context.Set<T>()
                                     .AsNoTracking()
@@ -55,7 +56,7 @@ namespace Manager.Infra.Repository{
             return obj.FirstOrDefault();
         }
 
-        public virtual async Task<List<T>> Get()
+        public virtual async Task<List<T>> GetAsync()
         {
             return await _context.Set<T>()
                                  . AsNoTracking()
