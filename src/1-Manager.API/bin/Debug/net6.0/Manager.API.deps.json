@@ -14,6 +14,7 @@
           "Manager.Domain": "1.0.0",
           "Manager.Infra": "1.0.0",
           "Manager.Services": "1.0.0",
+          "MediatR.Extensions.Microsoft.DependencyInjection": "9.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.2",
           "Microsoft.AspNetCore.Authentication.OpenIdConnect": "6.0.2",
           "Swashbuckle.AspNetCore": "6.2.3",
@@ -115,6 +116,26 @@
           "lib/net5.0/Isopoh.Cryptography.SecureArray.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "MediatR/9.0.0": {
+        "runtime": {
+          "lib/netstandard2.1/MediatR.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.0.0"
+          }
+        }
+      },
+      "MediatR.Extensions.Microsoft.DependencyInjection/9.0.0": {
+        "dependencies": {
+          "MediatR": "9.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/MediatR.Extensions.Microsoft.DependencyInjection.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.0.0"
           }
         }
       },
@@ -515,6 +536,9 @@
       },
       "System.ValueTuple/4.5.0": {},
       "Manager.Core/1.0.0": {
+        "dependencies": {
+          "MediatR": "9.0.0"
+        },
         "runtime": {
           "Manager.Core.dll": {}
         }
@@ -613,6 +637,20 @@
       "sha512": "sha512-zD4/+Ukya1ltZ4dFdkAZgPohe1pvfR2W8Tc2Tu+eb6+LUMnJIpNk6FustWwOKraBZn7b1FNjmW1WhxrtjJ36XA==",
       "path": "isopoh.cryptography.securearray/1.1.10",
       "hashPath": "isopoh.cryptography.securearray.1.1.10.nupkg.sha512"
+    },
+    "MediatR/9.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8b3UYNxegHVYcJMG2zH8wn+YqxLvXG+eMfj0cMCq/jTW72p6O3PCKMkrIv0mqyxdW7bA4gblsocw7n+/9Akg5g==",
+      "path": "mediatr/9.0.0",
+      "hashPath": "mediatr.9.0.0.nupkg.sha512"
+    },
+    "MediatR.Extensions.Microsoft.DependencyInjection/9.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-msreY4ogiPdIRWiCQVHQDytIQpsZCLWsixWPZ+Xs86KZrvtuiV8BDHbIT0kBmogynVYWNpspb3caw+86YU8L6w==",
+      "path": "mediatr.extensions.microsoft.dependencyinjection/9.0.0",
+      "hashPath": "mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.2": {
       "type": "package",

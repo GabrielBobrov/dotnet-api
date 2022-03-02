@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using Manager.Core.Exceptions;
 using Manager.Domain.Validators;
 
 namespace Manager.Domain.Entities
@@ -27,45 +25,23 @@ namespace Manager.Domain.Entities
 
 
         //Comportamentos
-        public void SetName(string name)
-        {
+        public void SetName(string name){
             Name = name;
             Validate();
         }
 
-        public void SetPassword(string password)
-        {
+        public void SetPassword(string password){
             Password = password;
             Validate();
         }
 
-        public void SetEmail(string email)
-        {
+        public void SetEmail(string email){
             Email = email;
             Validate();
         }
-         public override bool Validate()
-         {
-             var validator = new UserValidator();
-             var validation = validator.Validate(this);
 
-             if (!validation.IsValid)
-             {
-                 foreach(var error in validation.Errors){
-                     _errors.Add(error.ErrorMessage);
-                     throw new DomainException("Campos invalidos", _errors);
-                 }
-             }
-
-             return true;
-         }
-
-         public void ChangePassword(string password)
-         {
-             Password = password;
-             Validate();
-         }
-            
+        //Autovalida
+        public bool Validate()
+            => base.Validate(new UserValidator(), this);
     }
-
 }

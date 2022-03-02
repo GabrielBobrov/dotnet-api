@@ -3,7 +3,9 @@ using Bogus;
 using Bogus.DataSets;
 using EscNet.Cryptography.Interfaces;
 using FluentAssertions;
+using Manager.Core.Communication.Mediator.Interfaces;
 using Manager.Domain.Entities;
+using Manager.Infra.Interfaces;
 using Manager.Services.DTO;
 using Manager.Services.Interfaces;
 using Manager.Services.Services;
@@ -15,7 +17,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xunit;
 using System.Linq.Expressions;
-using Manager.Infra.Interface;
 
 namespace Manager.Tests.Projects.Services
 {
@@ -28,26 +29,27 @@ namespace Manager.Tests.Projects.Services
         private readonly IMapper _mapper;
         private readonly Mock<IUserRepository> _userRepositoryMock;
         private readonly Mock<IRijndaelCryptography> _rijndaelCryptographyMock;
+        private readonly Mock<IMediatorHandler> _mediatorHandler;
 
         public UserServiceTests()
         {
             _mapper = AutoMapperConfiguration.GetConfiguration();
             _userRepositoryMock = new Mock<IUserRepository>();
             _rijndaelCryptographyMock = new Mock<IRijndaelCryptography>();
+            _mediatorHandler = new Mock<IMediatorHandler>();
 
-            _sut = new UserService
-            (
+            _sut = new UserService(
                 mapper: _mapper,
                 userRepository: _userRepositoryMock.Object,
-                rijndaelCryptography: _rijndaelCryptographyMock.Object
-            );
+                rijndaelCryptography: _rijndaelCryptographyMock.Object,
+                mediator: _mediatorHandler.Object);
         }
 
         #region Create
 
         [Fact(DisplayName = "Create Valid User")]
         [Trait("Category", "Services")]
-        public async Task Create_WhenUserIsValid_ReturnsUserDto()
+        public async Task Create_WhenUserIsValid_ReturnsUserDTO()
         {
             // Arrange
             var userToCreate = UserFixture.CreateValidUserDTO();
@@ -56,9 +58,10 @@ namespace Manager.Tests.Projects.Services
             var userCreated = _mapper.Map<User>(userToCreate);
             userCreated.SetPassword(encryptedPassword);
 
-            _userRepositoryMock.Setup(x => 
-                x.GetByEmailAsync(It.IsAny<string>()))
-                .ReturnsAsync(() => null);
+            _userRepositoryMock.Setup(x => x.GetAsync(
+                It.IsAny<Expression<Func<User, bool>>>(),
+                It.IsAny<bool>()))
+            .ReturnsAsync(() => null);
 
             _rijndaelCryptographyMock.Setup(x => x.Encrypt(It.IsAny<string>()))
                 .Returns(encryptedPassword);
@@ -70,8 +73,51 @@ namespace Manager.Tests.Projects.Services
             var result = await _sut.CreateAsync(userToCreate);
 
             // Assert
-            result.Should()
+            result.Value.Should()
                 .BeEquivalentTo(_mapper.Map<UserDto>(userCreated));
+        }
+
+        [Fact(DisplayName = "Create When User Exists")]
+        [Trait("Category", "Services")]
+        public async Task Create_WhenUserExists_ReturnsEmptyOptional()
+        {
+            // Arrange
+            var userToCreate = UserFixture.CreateValidUserDTO();
+            var userExists = UserFixture.CreateValidUser();
+
+            _userRepositoryMock.Setup(x => x.GetAsync(
+                It.IsAny<Expression<Func<User, bool>>>(),
+                It.IsAny<bool>()))
+            .ReturnsAsync(() => userExists);
+
+            // Act
+            var result = await _sut.CreateAsync(userToCreate);
+
+
+            // Act
+            result.HasValue.Should()
+                .BeFalse();
+        }
+
+        [Fact(DisplayName = "Create When User is Invalid")]
+        [Trait("Category", "Services")]
+        public async Task Create_WhenUserIsInvalid_ReturnsEmptyOptional()
+        {
+            // Arrange
+            var userToCreate = UserFixture.CreateInvalidUserDTO();
+
+            _userRepositoryMock.Setup(x => x.GetAsync(
+                It.IsAny<Expression<Func<User, bool>>>(),
+                It.IsAny<bool>()))
+            .ReturnsAsync(() => null);
+
+            // Act
+            var result = await _sut.CreateAsync(userToCreate);
+
+
+            // Act
+            result.HasValue.Should()
+                .BeFalse();
         }
 
         #endregion
@@ -80,7 +126,7 @@ namespace Manager.Tests.Projects.Services
 
         [Fact(DisplayName = "Update Valid User")]
         [Trait("Category", "Services")]
-        public async Task Update_WhenUserIsValid_ReturnsUserDto()
+        public async Task Update_WhenUserIsValid_ReturnsUserDTO()
         {
             // Arrange
             var oldUser = UserFixture.CreateValidUser();
@@ -102,8 +148,50 @@ namespace Manager.Tests.Projects.Services
             var result = await _sut.UpdateAsync(userToUpdate);
 
             // Assert
-            result.Should()
+            result.Value.Should()
                 .BeEquivalentTo(_mapper.Map<UserDto>(userUpdated));
+        }
+
+        [Fact(DisplayName = "Update When User Not Exists")]
+        [Trait("Category", "Services")]
+        public async Task Update_WhenUserNotExists_ReturnsEmptyOptional()
+        {
+            // Arrange
+            var userToUpdate = UserFixture.CreateValidUserDTO();
+
+            _userRepositoryMock.Setup(x => x.GetAsync(
+                It.IsAny<Expression<Func<User, bool>>>(),
+                It.IsAny<bool>()))
+            .ReturnsAsync(() => null);
+
+            // Act
+            var result = await _sut.UpdateAsync(userToUpdate);
+
+            // Act
+            result.HasValue.Should()
+                .BeFalse();
+        }
+
+        [Fact(DisplayName = "Update When User is Invalid")]
+        [Trait("Category", "Services")]
+        public async Task Update_WhenUserIsInvalid_ReturnsEmptyOptional()
+        {
+            // Arrange
+            var oldUser = UserFixture.CreateValidUser();
+            var userToUpdate = UserFixture.CreateInvalidUserDTO();
+
+            _userRepositoryMock.Setup(x => x.GetAsync(
+                It.IsAny<Expression<Func<User, bool>>>(),
+                It.IsAny<bool>()))
+            .ReturnsAsync(() => oldUser);
+
+            // Act
+            var result = await _sut.UpdateAsync(userToUpdate);
+ 
+
+            // Act
+            result.HasValue.Should()
+                .BeFalse();
         }
 
         #endregion
@@ -133,10 +221,10 @@ namespace Manager.Tests.Projects.Services
 
         [Fact(DisplayName = "Get By Id")]
         [Trait("Category", "Services")]
-        public async Task GetById_WhenUserExists_ReturnsUserDto()
+        public async Task GetById_WhenUserExists_ReturnsUserDTO()
         {
             // Arrange
-            var userId = new Randomizer().Long(0, 1000);
+            var userId = new Randomizer().Int(0, 1000);
             var userFound = UserFixture.CreateValidUser();
 
             _userRepositoryMock.Setup(x => x.GetAsync(userId))
@@ -146,7 +234,7 @@ namespace Manager.Tests.Projects.Services
             var result = await _sut.GetAsync(userId);
 
             // Assert
-            result.Should()
+            result.Value.Should()
                 .BeEquivalentTo(_mapper.Map<UserDto>(userFound));
         }
 
@@ -164,27 +252,28 @@ namespace Manager.Tests.Projects.Services
             var result = await _sut.GetAsync(userId);
 
             // Assert
-            result.Should()
+            result.Value.Should()
                 .BeNull();
         }
 
         [Fact(DisplayName = "Get By Email")]
         [Trait("Category", "Services")]
-        public async Task GetByEmail_WhenUserExists_ReturnsUserDto()
+        public async Task GetByEmail_WhenUserExists_ReturnsUserDTO()
         {
             // Arrange
             var userEmail = new Internet().Email();
             var userFound = UserFixture.CreateValidUser();
 
-            _userRepositoryMock.Setup(x => 
-                x.GetByEmailAsync(It.IsAny<string>()))
+            _userRepositoryMock.Setup(x => x.GetAsync(
+                It.IsAny<Expression<Func<User, bool>>>(),
+                It.IsAny<bool>()))
             .ReturnsAsync(() => userFound);
 
             // Act
             var result = await _sut.GetByEmailAsync(userEmail);
 
             // Assert
-            result.Should()
+            result.Value.Should()
                 .BeEquivalentTo(_mapper.Map<UserDto>(userFound));
         }
 
@@ -195,33 +284,34 @@ namespace Manager.Tests.Projects.Services
             // Arrange
             var userEmail = new Internet().Email();
 
-            _userRepositoryMock.Setup(x => 
-                x.GetByEmailAsync(It.IsAny<string>()))
-                .ReturnsAsync(() => null);
+            _userRepositoryMock.Setup(x => x.GetAsync(
+                 It.IsAny<Expression<Func<User, bool>>>(),
+                 It.IsAny<bool>()))
+             .ReturnsAsync(() => null);
 
             // Act
             var result = await _sut.GetByEmailAsync(userEmail);
 
             // Assert
-            result.Should()
+            result.Value.Should()
                 .BeNull();
         }
 
         [Fact(DisplayName = "Get All Users")]
         [Trait("Category", "Services")]
-        public async Task GetAllUsers_WhenUsersExists_ReturnsAListOfUserDto()
+        public async Task GetAllUsers_WhenUsersExists_ReturnsAListOfUserDTO()
         {
             // Arrange
             var usersFound = UserFixture.CreateListValidUser();
 
-            _userRepositoryMock.Setup(x => x.GetAsync())
+            _userRepositoryMock.Setup(x => x.GetAllAsync())
                 .ReturnsAsync(() => usersFound);
 
             // Act
             var result = await _sut.GetAllAsync();
 
             // Assert
-            result.Should()
+            result.Value.Should()
                 .BeEquivalentTo(_mapper.Map<List<UserDto>>(usersFound));
         }
 
@@ -231,14 +321,14 @@ namespace Manager.Tests.Projects.Services
         {
             // Arrange
 
-            _userRepositoryMock.Setup(x => x.GetAsync())
+            _userRepositoryMock.Setup(x => x.GetAllAsync())
                 .ReturnsAsync(() => null);
 
             // Act
             var result = await _sut.GetAllAsync();
 
             // Assert
-            result.Should()
+            result.Value.Should()
                 .BeEmpty();
         }
 
@@ -248,21 +338,22 @@ namespace Manager.Tests.Projects.Services
 
         [Fact(DisplayName = "Search By Name")]
         [Trait("Category", "Services")]
-        public async Task SearchByName_WhenAnyUserFound_ReturnsAListOfUserDto()
+        public async Task SearchByName_WhenAnyUserFound_ReturnsAListOfUserDTO()
         {
             // Arrange
             var nameToSearch = new Name().FirstName();
             var usersFound = UserFixture.CreateListValidUser();
 
-            _userRepositoryMock.Setup(x => 
-                x.SearchByNameAsync(It.IsAny<string>()))
-                .ReturnsAsync(() => usersFound);
+            _userRepositoryMock.Setup(x => x.SearchAsync(
+                 It.IsAny<Expression<Func<User, bool>>>(),
+                 It.IsAny<bool>()))
+             .ReturnsAsync(() => usersFound);
 
             // Act
             var result = await _sut.SearchByNameAsync(nameToSearch);
 
             // Assert
-            result.Should()
+            result.Value.Should()
                 .BeEquivalentTo(_mapper.Map<List<UserDto>>(usersFound));
         }
 
@@ -273,35 +364,37 @@ namespace Manager.Tests.Projects.Services
             // Arrange
             var nameToSearch = new Name().FirstName();
 
-            _userRepositoryMock.Setup(x => 
-                x.SearchByNameAsync(It.IsAny<string>()))
-                .ReturnsAsync(() => null);
+            _userRepositoryMock.Setup(x => x.SearchAsync(
+                 It.IsAny<Expression<Func<User, bool>>>(),
+                 It.IsAny<bool>()))
+             .ReturnsAsync(() => null);
 
             // Act
             var result = await _sut.SearchByNameAsync(nameToSearch);
 
             // Assert
-            result.Should()
+            result.Value.Should()
                 .BeEmpty();
         }
 
         [Fact(DisplayName = "Search By Email")]
         [Trait("Category", "Services")]
-        public async Task SearchByEmail_WhenAnyUserFound_ReturnsAListOfUserDto()
+        public async Task SearchByEmail_WhenAnyUserFound_ReturnsAListOfUserDTO()
         {
             // Arrange
             var emailSoSearch = new Internet().Email();
             var usersFound = UserFixture.CreateListValidUser();
 
-            _userRepositoryMock.Setup(x => 
-                x.SearchByEmailAsync(It.IsAny<string>()))
-                .ReturnsAsync(() => usersFound);
+            _userRepositoryMock.Setup(x => x.SearchAsync(
+                 It.IsAny<Expression<Func<User, bool>>>(),
+                 It.IsAny<bool>()))
+             .ReturnsAsync(() => usersFound);
 
             // Act
             var result = await _sut.SearchByEmailAsync(emailSoSearch);
 
             // Assert
-            result.Should()
+            result.Value.Should()
                 .BeEquivalentTo(_mapper.Map<List<UserDto>>(usersFound));
         }
 
@@ -312,15 +405,16 @@ namespace Manager.Tests.Projects.Services
             // Arrange
             var emailSoSearch = new Internet().Email();
 
-            _userRepositoryMock.Setup(x => 
-                x.SearchByEmailAsync(It.IsAny<string>()))
-                .ReturnsAsync(() => null);
+            _userRepositoryMock.Setup(x => x.SearchAsync(
+                 It.IsAny<Expression<Func<User, bool>>>(),
+                 It.IsAny<bool>()))
+             .ReturnsAsync(() => null);
 
             // Act
             var result = await _sut.SearchByEmailAsync(emailSoSearch);
 
             // Assert
-            result.Should()
+            result.Value.Should()
                 .BeEmpty();
         }
 

@@ -173,6 +173,19 @@
           "lib/netstandard2.0/MediatR.Contracts.dll": {}
         }
       },
+      "MediatR.Extensions.Microsoft.DependencyInjection/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "MediatR": "9.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/MediatR.Extensions.Microsoft.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MediatR.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.2": {
         "type": "package",
         "dependencies": {
@@ -2430,6 +2443,7 @@
           "Manager.Domain": "1.0.0",
           "Manager.Infra": "1.0.0",
           "Manager.Services": "1.0.0",
+          "MediatR.Extensions.Microsoft.DependencyInjection": "9.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.2",
           "Microsoft.AspNetCore.Authentication.OpenIdConnect": "6.0.2",
           "Swashbuckle.AspNetCore": "6.2.3",
@@ -2448,6 +2462,9 @@
       "Manager.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "MediatR": "9.0.0"
+        },
         "compile": {
           "bin/placeholder/Manager.Core.dll": {}
         },
@@ -2813,6 +2830,19 @@
         "lib/netstandard2.0/MediatR.Contracts.xml",
         "mediatr.contracts.1.0.1.nupkg.sha512",
         "mediatr.contracts.nuspec"
+      ]
+    },
+    "MediatR.Extensions.Microsoft.DependencyInjection/9.0.0": {
+      "sha512": "msreY4ogiPdIRWiCQVHQDytIQpsZCLWsixWPZ+Xs86KZrvtuiV8BDHbIT0kBmogynVYWNpspb3caw+86YU8L6w==",
+      "type": "package",
+      "path": "mediatr.extensions.microsoft.dependencyinjection/9.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "gradient_128x128.png",
+        "lib/netstandard2.0/MediatR.Extensions.Microsoft.DependencyInjection.dll",
+        "mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
+        "mediatr.extensions.microsoft.dependencyinjection.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.2": {

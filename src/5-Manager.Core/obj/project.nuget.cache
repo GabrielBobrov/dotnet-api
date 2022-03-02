@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "LnwD4kW44Bc3t071RUpIXPN2xkaJY6nr5b9hcY1aBIj/thvJfQJcotAC9GSMQjeHqn4PkVzmjzRNlTcaLCvf0Q==",
+  "dgSpecHash": "TU22zhpuY4ew+iudffARRj6kpX+T8N54uw4//+Ai3m1mnudFMqn+C1dyAuWVQ1pM3vwx8azvxnMehSh0UVIcfw==",
   "success": true,
   "projectFilePath": "/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/5-Manager.Core/Manager.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/gabrielgomesbobrovlopes/.nuget/packages/mediatr/9.0.0/mediatr.9.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

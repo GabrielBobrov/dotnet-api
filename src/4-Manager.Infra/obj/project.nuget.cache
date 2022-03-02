@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "SZewTQyLyowAj4sf1HAbPuiZPeGV0MYvUEX9+E4dfFZX9rO0aONEg9qqek/x7DgSgzzBpIQmMbub7CACvlNbbQ==",
+  "dgSpecHash": "NsXJgTBKegmaeSshLcLLwiavafZPxjeSEcRs69A2e9PDeMPtFnaaPsTbL1RfJWdG/uxddriuVZkXB59ZalfFVQ==",
   "success": true,
   "projectFilePath": "/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/4-Manager.Infra/Manager.Infra.csproj",
   "expectedPackageFiles": [
     "/Users/gabrielgomesbobrovlopes/.nuget/packages/fluentvalidation/10.3.6/fluentvalidation.10.3.6.nupkg.sha512",
     "/Users/gabrielgomesbobrovlopes/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
+    "/Users/gabrielgomesbobrovlopes/.nuget/packages/mediatr/9.0.0/mediatr.9.0.0.nupkg.sha512",
     "/Users/gabrielgomesbobrovlopes/.nuget/packages/microsoft.entityframeworkcore/6.0.1/microsoft.entityframeworkcore.6.0.1.nupkg.sha512",
     "/Users/gabrielgomesbobrovlopes/.nuget/packages/microsoft.entityframeworkcore.abstractions/6.0.1/microsoft.entityframeworkcore.abstractions.6.0.1.nupkg.sha512",
     "/Users/gabrielgomesbobrovlopes/.nuget/packages/microsoft.entityframeworkcore.analyzers/6.0.1/microsoft.entityframeworkcore.analyzers.6.0.1.nupkg.sha512",

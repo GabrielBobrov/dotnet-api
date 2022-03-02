@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Ss9jnsRcocf6pmzUOmdONXV+CFe9mNtOOMPY/6jQLwI/CoUbUGpuHnLiwowAHtUB4UkL2rVWBpGJlTFOLe/6GQ==",
+  "dgSpecHash": "kkaZ0/WtfU7CiCsPNNZayHBOYReCR202zEPLyuUJQ8RmZVvXXz7DNP5sqbhbI+OufeLlrJTjHjiKiZaGidEGIw==",
   "success": true,
   "projectFilePath": "/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/1-Manager.API/Manager.API.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,8 @@
     "/Users/gabrielgomesbobrovlopes/.nuget/packages/isopoh.cryptography.argon2/1.1.10/isopoh.cryptography.argon2.1.1.10.nupkg.sha512",
     "/Users/gabrielgomesbobrovlopes/.nuget/packages/isopoh.cryptography.blake2b/1.1.10/isopoh.cryptography.blake2b.1.1.10.nupkg.sha512",
     "/Users/gabrielgomesbobrovlopes/.nuget/packages/isopoh.cryptography.securearray/1.1.10/isopoh.cryptography.securearray.1.1.10.nupkg.sha512",
+    "/Users/gabrielgomesbobrovlopes/.nuget/packages/mediatr/9.0.0/mediatr.9.0.0.nupkg.sha512",
+    "/Users/gabrielgomesbobrovlopes/.nuget/packages/mediatr.extensions.microsoft.dependencyinjection/9.0.0/mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
     "/Users/gabrielgomesbobrovlopes/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/6.0.2/microsoft.aspnetcore.authentication.jwtbearer.6.0.2.nupkg.sha512",
     "/Users/gabrielgomesbobrovlopes/.nuget/packages/microsoft.aspnetcore.authentication.openidconnect/6.0.2/microsoft.aspnetcore.authentication.openidconnect.6.0.2.nupkg.sha512",
     "/Users/gabrielgomesbobrovlopes/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",

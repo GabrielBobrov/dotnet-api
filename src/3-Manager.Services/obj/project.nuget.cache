@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "g6TWN9Nbtv9SeRDxo0nKN9HFVp/7t0wwOVc02hBMQH3935G4eYlYeyVKGXOUaAgS+VShqEkYwbNozylehtsWiA==",
+  "dgSpecHash": "UYnQII9/VylbKT5PXqY1M3gxsJQFqxUEkBMA4/kJCPe0yULjsynVNIE7/X2pansnpHiGPo1wzkR6PcJ0zw5INA==",
   "success": true,
   "projectFilePath": "/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/3-Manager.Services/Manager.Services.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "/Users/gabrielgomesbobrovlopes/.nuget/packages/isopoh.cryptography.argon2/1.1.10/isopoh.cryptography.argon2.1.1.10.nupkg.sha512",
     "/Users/gabrielgomesbobrovlopes/.nuget/packages/isopoh.cryptography.blake2b/1.1.10/isopoh.cryptography.blake2b.1.1.10.nupkg.sha512",
     "/Users/gabrielgomesbobrovlopes/.nuget/packages/isopoh.cryptography.securearray/1.1.10/isopoh.cryptography.securearray.1.1.10.nupkg.sha512",
+    "/Users/gabrielgomesbobrovlopes/.nuget/packages/mediatr/9.0.0/mediatr.9.0.0.nupkg.sha512",
     "/Users/gabrielgomesbobrovlopes/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/gabrielgomesbobrovlopes/.nuget/packages/microsoft.entityframeworkcore/6.0.1/microsoft.entityframeworkcore.6.0.1.nupkg.sha512",
     "/Users/gabrielgomesbobrovlopes/.nuget/packages/microsoft.entityframeworkcore.abstractions/6.0.1/microsoft.entityframeworkcore.abstractions.6.0.1.nupkg.sha512",

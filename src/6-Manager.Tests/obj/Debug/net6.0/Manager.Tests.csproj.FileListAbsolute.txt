@@ -1,9 +1,4 @@
 /Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/6-Manager.Tests/bin/Debug/net6.0/CoverletSourceRootsMapping
-/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/6-Manager.Tests/obj/Debug/net6.0/Manager.Tests.csproj.AssemblyReference.cache
-/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/6-Manager.Tests/obj/Debug/net6.0/Manager.Tests.GeneratedMSBuildEditorConfig.editorconfig
-/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/6-Manager.Tests/obj/Debug/net6.0/Manager.Tests.AssemblyInfoInputs.cache
-/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/6-Manager.Tests/obj/Debug/net6.0/Manager.Tests.AssemblyInfo.cs
-/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/6-Manager.Tests/obj/Debug/net6.0/Manager.Tests.csproj.CoreCompileInputs.cache
 /Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/6-Manager.Tests/bin/Debug/net6.0/Manager.API.deps.json
 /Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/6-Manager.Tests/bin/Debug/net6.0/Manager.API.runtimeconfig.json
 /Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/6-Manager.Tests/bin/Debug/net6.0/appsettings.Development.json
@@ -142,6 +137,11 @@
 /Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/6-Manager.Tests/bin/Debug/net6.0/Manager.Domain.pdb
 /Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/6-Manager.Tests/bin/Debug/net6.0/Manager.Services.pdb
 /Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/6-Manager.Tests/bin/Debug/net6.0/Manager.API.pdb
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/6-Manager.Tests/obj/Debug/net6.0/Manager.Tests.csproj.AssemblyReference.cache
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/6-Manager.Tests/obj/Debug/net6.0/Manager.Tests.GeneratedMSBuildEditorConfig.editorconfig
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/6-Manager.Tests/obj/Debug/net6.0/Manager.Tests.AssemblyInfoInputs.cache
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/6-Manager.Tests/obj/Debug/net6.0/Manager.Tests.AssemblyInfo.cs
+/Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/6-Manager.Tests/obj/Debug/net6.0/Manager.Tests.csproj.CoreCompileInputs.cache
 /Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/6-Manager.Tests/obj/Debug/net6.0/Manager.Tests.csproj.CopyComplete
 /Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/6-Manager.Tests/obj/Debug/net6.0/Manager.Tests.dll
 /Users/gabrielgomesbobrovlopes/Desktop/dev/VisualStudio/APItest/src/6-Manager.Tests/obj/Debug/net6.0/ref/Manager.Tests.dll

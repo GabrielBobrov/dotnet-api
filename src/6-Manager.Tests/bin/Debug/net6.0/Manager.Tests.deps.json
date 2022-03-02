@@ -1604,6 +1604,7 @@
           "Manager.Domain": "1.0.0",
           "Manager.Infra": "1.0.0",
           "Manager.Services": "1.0.0",
+          "MediatR": "10.0.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.2",
           "Microsoft.AspNetCore.Authentication.OpenIdConnect": "6.0.2",
           "Swashbuckle.AspNetCore": "6.2.3",
@@ -1614,6 +1615,9 @@
         }
       },
       "Manager.Core/1.0.0": {
+        "dependencies": {
+          "MediatR": "10.0.1"
+        },
         "runtime": {
           "Manager.Core.dll": {}
         }

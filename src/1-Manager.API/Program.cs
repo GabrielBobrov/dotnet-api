@@ -4,13 +4,18 @@ using AutoMapper;
 using EscNet.IoC.Cryptography;
 using Manager.API.Token;
 using Manager.API.ViewModels;
+using Manager.Core.Communication.Handlers;
+using Manager.Core.Communication.Mediator;
+using Manager.Core.Communication.Mediator.Interfaces;
+using Manager.Core.Communication.Messages.Notifications;
 using Manager.Domain.Entities;
 using Manager.Infra.Context;
-using Manager.Infra.Interface;
+using Manager.Infra.Interfaces;
 using Manager.Infra.Repositories;
 using Manager.Services.DTO;
 using Manager.Services.Interfaces;
 using Manager.Services.Services;
+using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -69,6 +74,14 @@ builder.Services.AddSingleton(d => builder.Configuration);
 
 #region Database
     builder.Services.AddDbContext<ManagerContext>(options => options.UseMySql(builder.Configuration["ConnectionStrings:ManagerAPIMySql"],Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.27-mysql")));
+#endregion
+
+#region Mediator
+
+    builder.Services.AddMediatR(typeof(Program));
+    builder.Services.AddScoped<INotificationHandler<DomainNotification>, DomainNotificationHandler>();
+    builder.Services.AddScoped<IMediatorHandler, MediatorHandler>();
+
 #endregion
 
 #region Cryptography
