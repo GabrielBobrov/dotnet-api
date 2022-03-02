@@ -66,8 +66,8 @@ builder.Services.AddEndpointsApiExplorer();
 
 #endregion
 
-builder.Services.AddSingleton(d => builder.Configuration);
 #region Services
+    builder.Services.AddSingleton(d => builder.Configuration);
     builder.Services.AddScoped<IUserService, UserService>();
     builder.Services.AddScoped<IUserRepository, UserRepository>();
 #endregion
