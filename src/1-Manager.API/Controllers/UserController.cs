@@ -44,10 +44,10 @@ namespace Manager.API.Controllers
                 
                 return BadRequest(Responses.DomainErrorMessage(ex.Message,ex.Errors));
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 
-                return StatusCode(500, Responses.ApplicationErrorMessage());
+                return StatusCode(500, e);
             }
         }
 

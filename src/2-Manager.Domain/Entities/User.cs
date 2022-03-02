@@ -59,6 +59,12 @@ namespace Manager.Domain.Entities
 
              return true;
          }
+
+         public void ChangePassword(string password)
+         {
+             Password = password;
+             Validate();
+         }
             
     }
 

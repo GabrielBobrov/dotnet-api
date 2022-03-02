@@ -1,6 +1,7 @@
 using System.Text;
 using System.Text.Json.Serialization;
 using AutoMapper;
+using EscNet.IoC.Cryptography;
 using Manager.API.Token;
 using Manager.API.ViewModels;
 using Manager.Domain.Entities;
@@ -68,6 +69,10 @@ builder.Services.AddSingleton(d => builder.Configuration);
 
 #region Database
     builder.Services.AddDbContext<ManagerContext>(options => options.UseMySql(builder.Configuration["ConnectionStrings:ManagerAPIMySql"],Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.27-mysql")));
+#endregion
+
+#region Cryptography
+    builder.Services.AddRijndaelCryptography(builder.Configuration["Cryptography:Key"]);
 #endregion
 
 #region Token
